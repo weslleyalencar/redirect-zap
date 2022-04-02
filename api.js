@@ -88,10 +88,7 @@ async function getLink(appIdParam, tableIdParam) {
 
     } catch (error) {
        
-    }
-
-
-
+    }   
 }
 
 // async function main(){
