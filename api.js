@@ -95,10 +95,10 @@ async function getLink(appIdParam, tableIdParam) {
 }
 
 // async function main(){
-//     let link = await getLink("appKQvKEm9xtHgy8T","tblX6Ps0CDJ12pulr")    
+// let link = await getLink("appKQvKEm9xtHgy8T","tblX6Ps0CDJ12pulr")    
     
     
-//     console.log(link)
+//  console.log(link)
 // }
 
 // main()

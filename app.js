@@ -19,9 +19,7 @@ app.get('/:appId/:tableId', async (req, res) => {
 
 })
 
-
 app.use(express.json)
-
 
 app.listen(porta, () => {
     console.log('Servidor rodando na porta ' + porta);
