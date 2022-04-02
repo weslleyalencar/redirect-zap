@@ -37,13 +37,14 @@ async function getRecords() {
 }
 
 
-async function getNextLink() {
+async function getNextLink() {    
     for (let link in baseLinks) {
         if (baseLinks[link].fields.contagemAtual < baseLinks[link].fields.contagemTotal) {
             baseLinks[link].fields.contagemAtual++
             return baseLinks[link].fields.link
         }
     }
+    return "Limite"
 }
 
 async function updateRecords() {
@@ -80,11 +81,13 @@ async function getLink(appIdParam, tableIdParam) {
         tableId = tableIdParam
         await getRecords()
         let link = await getNextLink()
-        await updateRecords()
-        return link
+        if(link !== 'Limite'){
+            await updateRecords()
+        }
+        return link     
 
     } catch (error) {
-        return 'httsp://www.google.com'
+       
     }
 
 
@@ -92,7 +95,10 @@ async function getLink(appIdParam, tableIdParam) {
 }
 
 // async function main(){
-//     console.log(await getLink()) 
+//     let link = await getLink("appKQvKEm9xtHgy8T","tblX6Ps0CDJ12pulr")    
+    
+    
+//     console.log(link)
 // }
 
 // main()
