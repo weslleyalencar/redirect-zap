@@ -1,11 +1,11 @@
 var express = require('express');
 var api = require("./api")
 var app = express()  
-var axios = require('axios');
-var baseLinks = []
+var porta = process.env.PORT || 8080
 
-
-
+app.get('/', (req, res) =>{
+    res.send('Servidor rodando na porta ' + porta)
+})
 
 app.get('/:appId/:tableId', async (req, res) => {    
     let {appId, tableId} = req.params
@@ -16,6 +16,6 @@ app.get('/:appId/:tableId', async (req, res) => {
 
 
 
-app.listen(port = 3000, () => {
-    console.log('Servidor rodando na porta ' + port);
+app.listen(porta, () => {
+    console.log('Servidor rodando na porta ' + porta);
 })
