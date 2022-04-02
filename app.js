@@ -4,7 +4,7 @@ var app = express()
 var porta = process.env.PORT || 8080
 
 app.get('/', (req, res) =>{
-    res.send('Servidor rodando na porta ' + porta)
+    res.send({message: "Servidor online"})
 })
 
 app.get('/:appId/:tableId', async (req, res) => {    
